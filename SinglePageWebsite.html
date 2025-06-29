@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sip & Savor - Alcoholic Beverage Recipes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8fafc;
+            color: #374151;
+        }
+        .ispravno {
+            color: green;
+        }
+        .neispravno {
+            color: red;
+        }
+        .recipe-list-item li {
+            margin-bottom: 0.25rem;
+        }
+        .recipe-list-item li::before {
+            content: '•';
+            color: #ef4444;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+        input[type="text"]:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.5);
+            border-color: #6366f1;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 lg:p-10">
+    <div class="max-w-6xl mx-auto bg-white rounded-xl shadow-xl overflow-hidden my-8 md:my-12">
+        <header class="bg-gradient-to-r from-red-600 to-orange-700 text-white p-8 sm:p-10 md:p-12 text-center rounded-t-xl">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-2 leading-tight">Sip & Savor</h1>
+            <p class="text-xl sm:text-2xl font-light text-red-100">Your Ultimate Guide to Alcoholic Beverage Recipes</p>
+        </header>
+
+        <section class="p-6 sm:p-8 md:p-10 lg:p-12 bg-gray-50 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">Craft Your Perfect Drink</h2>
+            <p class="text-lg leading-relaxed text-gray-700 max-w-2xl mx-auto">
+                Explore a curated collection of classic and contemporary alcoholic beverage recipes. From refreshing cocktails to sophisticated spirits, find your next favorite drink and impress your guests!
+            </p>
+        </section>
+
+        <section class="p-6 sm:p-8 md:p-10 lg:p-12 bg-white">
+            <h2 class="text-3xl font-bold text-red-700 mb-8 text-center border-b-2 border-red-300 pb-4">Our Featured Recipes</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="https://placehold.co/600x400/f87171/ffffff?text=Mojito" alt="Mojito" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Mojito</h3>
+                        <p class="text-gray-600 text-sm mb-3">A classic, refreshing Cuban highball.</p>
+                        <h4 class="font-medium text-gray-700 mb-1">Ingredients:</h4>
+                        <ul class="list-none pl-5 text-sm text-gray-600 recipe-list-item">
+                            <li>2 oz White rum</li>
+                            <li>1 oz Fresh lime juice</li>
+                            <li>2 tsp Sugar</li>
+                            <li>6-8 Fresh mint leaves</li>
+                            <li>Soda water</li>
+                            <li>Lime slices and mint sprig for garnish</li>
+                        </ul>
+                        <h4 class="font-medium text-gray-700 mt-3 mb-1">Instructions:</h4>
+                        <ol class="list-decimal pl-5 text-sm text-gray-600">
+                            <li>Gently muddle mint leaves with lime juice and sugar in a sturdy glass.</li>
+                            <li>Add rum and stir lightly.</li>
+                            <li>Fill the glass with crushed ice.</li>
+                            <li>Top with soda water.</li>
+                            <li>Garnish with a lime slice and a mint sprig.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="https://placehold.co/600x400/fb923c/ffffff?text=Old+Fashioned" alt="Old Fashioned" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Old Fashioned</h3>
+                        <p class="text-gray-600 text-sm mb-3">A timeless cocktail, often considered the first cocktail.</p>
+                        <h4 class="font-medium text-gray-700 mb-1">Ingredients:</h4>
+                        <ul class="list-none pl-5 text-sm text-gray-600 recipe-list-item">
+                            <li>2 oz Bourbon or rye whiskey</li>
+                            <li>1 Sugar cube (or 1 tsp sugar)</li>
+                            <li>2 dashes Angostura bitters</li>
+                            <li>A few drops of plain water</li>
+                            <li>Orange peel for garnish</li>
+                        </ul>
+                        <h4 class="font-medium text-gray-700 mt-3 mb-1">Instructions:</h4>
+                        <ol class="list-decimal pl-5 text-sm text-gray-600">
+                            <li>Place sugar cube in an Old Fashioned glass.</li>
+                            <li>Add bitters and a few drops of water. Muddle until sugar is dissolved.</li>
+                            <li>Fill the glass with large ice cubes.</li>
+                            <li>Pour in whiskey and stir until well-chilled.</li>
+                            <li>Garnish with a large orange peel, twisted over the drink.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                    <img src="https://placehold.co/600x400/fca5a5/ffffff?text=Margarita" alt="Margarita" class="w-full h-48 object-cover">
+                    <div class="p-5">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Margarita</h3>
+                        <p class="text-gray-600 text-sm mb-3">A sour and tangy Mexican cocktail.</p>
+                        <h4 class="font-medium text-gray-700 mb-1">Ingredients:</h4>
+                        <ul class="list-none pl-5 text-sm text-gray-600 recipe-list-item">
+                            <li>2 oz Tequila (Blanco or Reposado)</li>
+                            <li>1 oz Fresh lime juice</li>
+                            <li>0.75 oz Triple sec (Cointreau or Grand Marnier recommended)</li>
+                            <li>Salt for rim (optional)</li>
+                            <li>Lime wedge for garnish</li>
+                        </ul>
+                        <h4 class="font-medium text-gray-700 mt-3 mb-1">Instructions:</h4>
+                        <ol class="list-decimal pl-5 text-sm text-gray-600">
+                            <li>If desired, rim a chilled glass with salt by rubbing a lime wedge around the rim and dipping it in salt.</li>
+                            <li>Combine tequila, lime juice, and triple sec in a shaker with ice.</li>
+                            <li>Shake well until thoroughly chilled.</li>
+                            <li>Strain into the prepared glass filled with fresh ice.</li>
+                            <li>Garnish with a lime wedge.</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-6 sm:p-8 md:p-10 lg:p-12 bg-indigo-50 rounded-b-xl" id="recipe-submission-form">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-8 text-center border-b-2 border-indigo-300 pb-4">Share Your Recipe!</h2>
+
+            <div id="formContainer" class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <p class="text-gray-700 mb-4 text-center">Customize the form background color:</p>
+                <div class="flex justify-center space-x-4 mb-6">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="boja" value="#fefcbf" onclick="promeniBojuForme('#fefcbf')" class="form-radio text-yellow-500">
+                        <span class="ml-2 text-gray-700">Light Yellow</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="boja" value="#dcfce7" onclick="promeniBojuForme('#dcfce7')" class="form-radio text-green-500">
+                        <span class="ml-2 text-gray-700">Light Green</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="boja" value="#bfdbfe" onclick="promeniBojuForme('#bfdbfe')" class="form-radio text-blue-500">
+                        <span class="ml-2 text-gray-700">Light Blue</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="boja" value="#e5e7eb" onclick="promeniBojuForme('#e5e7eb')" checked class="form-radio text-gray-500">
+                        <span class="ml-2 text-gray-700">Light Gray</span>
+                    </label>
+                </div>
+
+                <p class="text-gray-700 mb-4 text-center">Adjust font thickness:</p>
+                <div class="flex justify-center space-x-4 mb-6">
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="fontBold" value="normal" onclick="promeniDebljinu('normal')" checked class="form-radio text-gray-700">
+                        <span class="ml-2 text-gray-700">Normal</span>
+                    </label>
+                    <label class="inline-flex items-center">
+                        <input type="radio" name="fontBold" value="bold" onclick="promeniDebljinu('bold')" class="form-radio text-gray-700">
+                        <span class="ml-2 text-gray-700">Bold</span>
+                    </label>
+                </div>
+
+
+                <form>
+                    <div class="mb-4">
+                        <label for="recipeName" class="block text-gray-700 text-sm font-bold mb-2">Recipe Name:</label>
+                        <input type="text" id="recipeName" name="recipeName" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" onfocus="promeniBojuPolja(this, '#e0e7ff')" onblur="promeniBojuPolja(this, 'white')">
+                        <span id="ispisRecipeName" class="text-xs italic"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="ingredients" class="block text-gray-700 text-sm font-bold mb-2">Ingredients (one per line):</label>
+                        <textarea id="ingredients" name="ingredients" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="5" placeholder="e.g., 2 oz Vodka&#10;1 oz Coffee Liqueur&#10;1 oz Espresso"></textarea>
+                        <span id="ispisIngredients" class="text-xs italic"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="instructions" class="block text-gray-700 text-sm font-bold mb-2">Instructions:</label>
+                        <textarea id="instructions" name="instructions" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" rows="7" placeholder="e.g., Combine ingredients in a shaker with ice. Shake vigorously. Strain into a chilled coupe glass."></textarea>
+                        <span id="ispisInstructions" class="text-xs italic"></span>
+                    </div>
+
+                    <div class="mb-4">
+                        <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
+                        <select id="category" name="category" class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                            <option value="">Select a Category</option>
+                            <option value="Cocktail">Cocktail</option>
+                            <option value="Shot">Shot</option>
+                            <option value="Spirit">Spirit</option>
+                            <option value="Wine">Wine</option>
+                            <option value="Beer">Beer</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <span id="ispisCategory" class="text-xs italic"></span>
+                    </div>
+
+                    <fieldset class="mb-4 p-4 border border-gray-300 rounded-md">
+                        <legend class="text-gray-700 text-sm font-bold mb-2">Difficulty Level:</legend>
+                        <label class="inline-flex items-center mr-4">
+                            <input type="radio" name="difficulty" value="Easy" class="form-radio text-green-500">
+                            <span class="ml-2 text-gray-700">Easy</span>
+                        </label>
+                        <label class="inline-flex items-center mr-4">
+                            <input type="radio" name="difficulty" value="Medium" class="form-radio text-yellow-500">
+                            <span class="ml-2 text-gray-700">Medium</span>
+                        </label>
+                        <label class="inline-flex items-center">
+                            <input type="radio" name="difficulty" value="Hard" class="form-radio text-red-500">
+                            <span class="ml-2 text-gray-700">Hard</span>
+                        </label>
+                        <span id="ispisDifficulty" class="text-xs italic block mt-2"></span>
+                    </fieldset>
+
+                    <div class="flex items-center justify-center">
+                        <button type="button" onclick="proveriFormu()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg shadow-lg transform transition-transform duration-200 hover:scale-105 focus:outline-none focus:shadow-outline">
+                            Submit Recipe
+                        </button>
+                    </div>
+                    <div id="poruka" class="mt-4 text-center font-semibold"></div>
+                </form>
+            </div>
+        </section>
+
+        <footer class="bg-gray-800 text-white text-center p-6 rounded-b-xl">
+            <p>&copy; 2025 Sip & Savor. All rights reserved.</p>
+            <p class="mt-2 text-gray-400">Crafted with passion.</p>
+        </footer>
+    </div>
+
+    <script>
+        var originalniTekstPoruka = "";
+
+        function promeniBojuForme(boja) {
+            document.getElementById("formContainer").style.backgroundColor = boja;
+        }
+
+        function promeniBojuPolja(polje, boja) {
+            polje.style.backgroundColor = boja;
+        }
+
+        function promeniDebljinu(debljina) {
+            document.body.style.fontWeight = debljina;
+        }
+
+        function proveriFormu() {
+            var recipeName = document.getElementById("recipeName").value.trim();
+            var ingredients = document.getElementById("ingredients").value.trim();
+            var instructions = document.getElementById("instructions").value.trim();
+            var category = document.getElementById("category").value;
+            var difficulty = document.querySelector('input[name="difficulty"]:checked');
+            var porukaElement = document.getElementById("poruka");
+
+            porukaElement.textContent = "";
+            porukaElement.className = "mt-4 text-center font-semibold";
+            document.getElementById("ispisRecipeName").textContent = "";
+            document.getElementById("ispisRecipeName").className = "text-xs italic";
+            document.getElementById("ispisIngredients").textContent = "";
+            document.getElementById("ispisIngredients").className = "text-xs italic";
+            document.getElementById("ispisInstructions").textContent = "";
+            document.getElementById("ispisInstructions").className = "text-xs italic";
+            document.getElementById("ispisCategory").textContent = "";
+            document.getElementById("ispisCategory").className = "text-xs italic";
+            document.getElementById("ispisDifficulty").textContent = "";
+            document.getElementById("ispisDifficulty").className = "text-xs italic";
+
+            let isValid = true;
+
+            if (recipeName === "") {
+                document.getElementById("ispisRecipeName").textContent = "Recipe name cannot be empty.";
+                document.getElementById("ispisRecipeName").className = "neispravno text-xs italic";
+                isValid = false;
+            } else {
+                document.getElementById("ispisRecipeName").textContent = "Looks good!";
+                document.getElementById("ispisRecipeName").className = "ispravno text-xs italic";
+            }
+
+            if (ingredients === "") {
+                document.getElementById("ispisIngredients").textContent = "Ingredients cannot be empty.";
+                document.getElementById("ispisIngredients").className = "neispravno text-xs italic";
+                isValid = false;
+            } else {
+                document.getElementById("ispisIngredients").textContent = "Looks good!";
+                document.getElementById("ispisIngredients").className = "ispravno text-xs italic";
+            }
+
+            if (instructions === "") {
+                document.getElementById("ispisInstructions").textContent = "Instructions cannot be empty.";
+                document.getElementById("ispisInstructions").className = "neispravno text-xs italic";
+                isValid = false;
+            } else {
+                document.getElementById("ispisInstructions").textContent = "Looks good!";
+                document.getElementById("ispisInstructions").className = "ispravno text-xs italic";
+            }
+
+            if (category === "") {
+                document.getElementById("ispisCategory").textContent = "Please select a category.";
+                document.getElementById("ispisCategory").className = "neispravno text-xs italic";
+                isValid = false;
+            } else {
+                document.getElementById("ispisCategory").textContent = "Looks good!";
+                document.getElementById("ispisCategory").className = "ispravno text-xs italic";
+            }
+
+            if (!difficulty) {
+                document.getElementById("ispisDifficulty").textContent = "Please select a difficulty level.";
+                document.getElementById("ispisDifficulty").className = "neispravno text-xs italic";
+                isValid = false;
+            } else {
+                document.getElementById("ispisDifficulty").textContent = "Looks good!";
+                document.getElementById("ispisDifficulty").className = "ispravno text-xs italic";
+            }
+
+            if (isValid) {
+                let submittedMessage = `Thank you for submitting "${recipeName}"! We received your recipe in the ${category} category, with a difficulty of ${difficulty.value}.`;
+                porukaElement.textContent = submittedMessage;
+                porukaElement.className += " ispravno text-lg text-green-700";
+            } else {
+                porukaElement.textContent = "Please correct the errors in the form.";
+                porukaElement.className += " neispravno text-lg text-red-700";
+            }
+        }
+    </script>
+</body>
+</html>
